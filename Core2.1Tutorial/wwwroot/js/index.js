@@ -1,12 +1,15 @@
-﻿//Javascript is async, so the below will never work because "theForm"
-//doesn't exist yet
+﻿$(document).ready(function () {
+    //Javascript is async, so the below will never work because "theForm"
+    //doesn't exist yet
 
-var theForm = document.getElementById("theForm");
-theForm.hidden = true;
+    var theForm = document.getElementById("theForm");
+    theForm.hidden = true;
 
-var button = document.getElementById("buyButton");
-button.addEventListener("click", function () {
-    alert("Buying Item");
+    var button = document.getElementById("buyButton");
+    button.addEventListener("click", function () {
+        alert("Buying Item");
+    });
+
+    var theForm = $("#theForm");
+    theForm.hide();
 });
-
-jQuery
