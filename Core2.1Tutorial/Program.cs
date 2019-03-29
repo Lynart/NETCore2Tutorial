@@ -12,11 +12,14 @@ namespace Core2._1Tutorial
 {
     public class Program
     {
+        //Entry point
         public static void Main(string[] args)
         {
+            //Calls method below
             CreateWebHostBuilder(args).Build().Run();
         }
 
+        //Look at Startup.cs
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();

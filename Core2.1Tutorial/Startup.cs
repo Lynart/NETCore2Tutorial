@@ -20,14 +20,11 @@ namespace Core2._1Tutorial
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
+            //This the most simple web app one can write. No matter what
+            //request is sent it will always return the response from below
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Does this really work?!");
             });
         }
     }
