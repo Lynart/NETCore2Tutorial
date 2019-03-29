@@ -23,7 +23,7 @@ namespace Core2._1Tutorial
             app.UseDefaultFiles();
             // Serves files (otherwise trying to access index.html won't work)
             app.UseStaticFiles();
-
+            app.UseNodeModules(env);
         }
     }
 }
