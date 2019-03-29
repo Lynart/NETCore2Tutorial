@@ -20,6 +20,7 @@ namespace Core2._1Tutorial
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseDefaultFiles();
             // Serves files (otherwise trying to access index.html won't work)
             app.UseStaticFiles();
 
