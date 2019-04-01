@@ -29,6 +29,7 @@ namespace Core2._1Tutorial
             }
             // Serves files (otherwise trying to access index.html won't work)
             app.UseStaticFiles();
+            app.UseNodeModules(env);
             app.UseMvc(cfg =>
             {
                 cfg.MapRoute("Default",

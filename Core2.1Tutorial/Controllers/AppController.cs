@@ -13,5 +13,12 @@ namespace Core2._1Tutorial.Controllers
         {
             return View();
         }
+
+        public IActionResult Contact()
+        {
+            ViewBag.Title = "Contact Us";
+
+            return View();
+        }
     }
 }
