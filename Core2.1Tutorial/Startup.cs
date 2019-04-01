@@ -21,13 +21,18 @@ namespace Core2._1Tutorial
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseDeveloperExceptionPage();
+            //Check this project's properties under environmental variables
+            if (env.IsDevelopment())
+            {
+                //By default, exceptions are dealt with 
+                app.UseDeveloperExceptionPage();
+            }
             // Serves files (otherwise trying to access index.html won't work)
             app.UseStaticFiles();
             app.UseMvc(cfg =>
             {
-                cfg.MapRoute("Default", 
-                    "/{controller}/{action}/{id?}", 
+                cfg.MapRoute("Default",
+                    "/{controller}/{action}/{id?}",
                     new { controller = "App", Action = "Index" });
             });
         }
