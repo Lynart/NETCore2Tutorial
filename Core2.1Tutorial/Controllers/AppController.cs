@@ -20,5 +20,12 @@ namespace Core2._1Tutorial.Controllers
 
             return View();
         }
+
+        public IActionResult About()
+        {
+            ViewBag.Title = "About Us";
+
+            return View();
+        }
     }
 }
