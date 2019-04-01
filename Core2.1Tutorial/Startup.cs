@@ -27,6 +27,10 @@ namespace Core2._1Tutorial
                 //By default, exceptions are dealt with 
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/error");
+            }
             // Serves files (otherwise trying to access index.html won't work)
             app.UseStaticFiles();
             app.UseNodeModules(env);
