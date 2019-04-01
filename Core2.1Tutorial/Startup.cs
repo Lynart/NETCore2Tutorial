@@ -26,11 +26,11 @@ namespace Core2._1Tutorial
             app.UseNodeModules(env);
             app.UseMvc(cfg =>
             {
-                cfg.MapRoute("Foo", 
-                    "/users/manage", 
-                    new { controller = "UserManagement", Action = "Index" });
+                cfg.MapRoute("Default", 
+                    "/{controller}/{action}/{id?}", 
+                    new { controller = "App", Action = "Index" });
             });
-                
+            
         }
     }
 }
