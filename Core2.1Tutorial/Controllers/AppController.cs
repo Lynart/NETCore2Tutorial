@@ -25,6 +25,14 @@ namespace Core2._1Tutorial.Controllers
         [HttpPost("contact")]
         public IActionResult Contact(ContactViewModel model)
         {
+            if (ModelState.IsValid)
+            {
+                //Send email
+            }
+            else
+            {
+                //show errors
+            }
             return View();
         }
 
