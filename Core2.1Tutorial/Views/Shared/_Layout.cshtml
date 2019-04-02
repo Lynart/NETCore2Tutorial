@@ -23,5 +23,7 @@
 
     <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="~/js/index.js"></script>
+    <!--Not required on average page, hence false. Look at contact.cshtml-->
+    @RenderSection("scripts", false)
 </body>
 </html>
