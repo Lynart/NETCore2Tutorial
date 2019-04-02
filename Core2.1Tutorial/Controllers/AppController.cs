@@ -1,4 +1,5 @@
-﻿using Core2._1Tutorial.ViewModels;
+﻿using Core2._1Tutorial.Services;
+using Core2._1Tutorial.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace Core2._1Tutorial.Controllers
 {
     public class AppController : Controller
     {
+        private IMailService _mailService;
+
+        public AppController(IMailService mailService)
+        {
+            _mailService = mailService;
+        }
+
         public IActionResult Index()
         {
             return View();
