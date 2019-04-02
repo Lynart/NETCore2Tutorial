@@ -36,6 +36,10 @@ namespace Core2._1Tutorial.Controllers
             if (ModelState.IsValid)
             {
                 //Send email
+                ViewBag.UserMessage = "Mail Sent";
+                _mailService.SendMessage(model.Email, model.Subject, model.Message);
+                ModelState.Clear();
+
             }
             else
             {
