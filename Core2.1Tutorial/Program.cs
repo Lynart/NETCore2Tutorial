@@ -22,6 +22,17 @@ namespace Core2._1Tutorial
         //Look at Startup.cs
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(SetupConfiguration)
                 .UseStartup<Startup>();
+
+        private static void SetupConfiguration(WebHostBuilderContext context, IConfigurationBuilder builder)
+        {
+            builder.Sources.Clear();
+
+            //can continue to append .addjsonfile or whatever below
+            //last called add has most priority
+            builder.AddJsonFile("config.json", false, true)
+                   .AddEnvironmentVariables();
+        }
     }
 }

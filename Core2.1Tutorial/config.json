@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\ProjectsV13;Database=CoreTutorialDb;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  }
+}
