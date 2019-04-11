@@ -1,4 +1,5 @@
-﻿using Core2._1Tutorial.Services;
+﻿using Core2._1Tutorial.Data;
+using Core2._1Tutorial.Services;
 using Core2._1Tutorial.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,14 +13,17 @@ namespace Core2._1Tutorial.Controllers
     public class AppController : Controller
     {
         private IMailService _mailService;
+        private DutchContext _ctx;
 
-        public AppController(IMailService mailService)
+        public AppController(IMailService mailService, DutchContext ctx)
         {
             _mailService = mailService;
+            _ctx = ctx;
         }
 
         public IActionResult Index()
         {
+            var results = _ctx.Products.ToList();
             return View();
         }
 

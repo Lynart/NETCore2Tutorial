@@ -28,6 +28,7 @@ namespace Core2._1Tutorial
             services.AddDbContext<DutchContext>(cfg => {
                 cfg.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
             });
+            services.AddTransient<DutchSeeder>();
             //Transient, Scoped, or Singleton in order of "heaviness"
             services.AddTransient<IMailService, NullMailService>();
             //Add support for real mail service

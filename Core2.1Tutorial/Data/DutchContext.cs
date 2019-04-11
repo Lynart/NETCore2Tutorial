@@ -17,5 +17,17 @@ namespace Core2._1Tutorial.Data
         public DbSet<Product> Products { get; set; }
         //We don't create a DbSet for OrderItem because we'd only
         //access OrderItem from Orders
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Order>()
+                .HasData(new Order()
+                {
+                    Id = 1,
+                    OrderDate = DateTime.Now,
+                    OrderNumber = "12345"
+                });
+        }
     }
 }
