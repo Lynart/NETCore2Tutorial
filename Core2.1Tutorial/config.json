@@ -1,5 +1,13 @@
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=(localdb)\\ProjectsV13;Database=CoreTutorialDb;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  },
+  //Note that improper logging attributes will cause a crash with
+  //unhelpful error messages
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
   }
 }
