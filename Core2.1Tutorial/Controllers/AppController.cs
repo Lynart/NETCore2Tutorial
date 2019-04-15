@@ -13,12 +13,13 @@ namespace Core2._1Tutorial.Controllers
     public class AppController : Controller
     {
         private IMailService _mailService;
-        private DutchContext _ctx;
 
-        public AppController(IMailService mailService, DutchContext ctx)
+        private IDutchRepository _repo;
+
+        public AppController(IMailService mailService, IDutchRepository repo)
         {
             _mailService = mailService;
-            _ctx = ctx;
+            _repo = repo;
         }
 
         public IActionResult Index()
@@ -57,6 +58,13 @@ namespace Core2._1Tutorial.Controllers
             ViewBag.Title = "About Us";
 
             return View();
+        }
+
+        public IActionResult Shop()
+        {
+            var results = _repo.GetAllProducts();
+
+            return View(results);
         }
     }
 }

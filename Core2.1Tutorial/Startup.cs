@@ -33,6 +33,9 @@ namespace Core2._1Tutorial
             services.AddTransient<IMailService, NullMailService>();
             //Add support for real mail service
 
+            //This allows a test version to use a different repository that is still
+            //bound to the same contract as IDutchRepository
+            services.AddScoped<IDutchRepository, DutchRepository>();
             services.AddMvc();
         }
 
