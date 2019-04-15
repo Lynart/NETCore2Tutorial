@@ -24,7 +24,6 @@ namespace Core2._1Tutorial.Controllers
 
         public IActionResult Index()
         {
-            var results = _ctx.Products.ToList();
             return View();
         }
 

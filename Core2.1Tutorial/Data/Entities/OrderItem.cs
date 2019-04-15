@@ -1,4 +1,4 @@
-﻿namespace DutchTreat.Data.Entities
+﻿namespace Core2._1Tutorial.Data.Entities
 {
   public class OrderItem
   {
